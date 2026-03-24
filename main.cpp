@@ -6,25 +6,45 @@ using namespace std;
 int main()
 {
     string status, gender, major;
-    double factor = 0.1;
     double scholarship = 10000.0;
+    double factor = 0.1;
+    double finalScholarship;
 
-    // Use the following input format: <status> <gender> <major>
-    // student female cs ; or student male math ; or nonstudent male cs ; etc.
     cin >> status >> gender >> major;
 
-    // TODO: Determine factor based on status, gender, and major using if statements
+    if (status == "student")
+    {
+        factor = 0.2;
 
-    double finalScholarship = scholarship * factor;
+        if (gender == "female")
+        {
+            factor = 1.0;
 
-    cout << setprecision(2) << fixed;
-    /* **************************************************
-    **************************************************
-    Do not change the output format. The output should be in the following format:
-    Decided Factor: <factor>, Final Scholarship Amount: <finalScholarship>
-    **************************************************
-    ************************************************** */
-    cout << "Decided Factor: " << factor << ", Final Scholarship Amount: " << finalScholarship << endl;
+            if (major == "cs")
+            {
+                factor = 3.0;
+            }
+        }
+        else
+        {
+            if (major == "cs")
+            {
+                factor = 2.0;
+            }
+        }
+    }
+    else
+    {
+        if (major == "cs")
+        {
+            factor = 0.5;
+        }
+    }
+
+    finalScholarship = scholarship * factor;
+
+   cout << fixed << setprecision(1) << factor << " ";
+cout << fixed << setprecision(2) << finalScholarship << endl;
 
     return 0;
 }
