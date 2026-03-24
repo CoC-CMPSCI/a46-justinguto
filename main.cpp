@@ -43,8 +43,8 @@ int main()
 
     finalScholarship = scholarship * factor;
 
-   cout << fixed << setprecision(1) << factor << " ";
-cout << fixed << setprecision(2) << finalScholarship << endl;
+    cout << fixed << setprecision(1) << factor << " "
+         << fixed << setprecision(2) << finalScholarship << endl;
 
     return 0;
 }
